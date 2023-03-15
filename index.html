@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/02f4eda956.js" crossorigin="anonymous"></script>
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+
+    <title>Dtravelt Offical</title>
+    <link rel="icon" href="img\logoDtravelt.ico">
+</head>
+<body>
+<nav>
+    <div class="nav-bar">
+        <i class='bx bx-menu sidebarOpen' ></i><span class="logo navLogo"><a href="index.html">Dtravelt</a></span>
+
+        <div class="menu">
+            <div class="logo-toggle">
+                <span class="logo"><a href="index.html">Dtravelt</a></span>
+                <i class='bx bx-x siderbarClose'></i>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="personalSite.html">Das bin ich</a></li>
+                <li><a href="streamPlan.html">Streamplan</a></li>
+                <li><a href="setup.html">Setup</a></li>
+                <li><a href="clips.html">Clips</a></li>
+                <li><a href="linkTree.html">Meine Links</a></li>
+            </ul>
+        </div>
+
+        <div class="darkLight-searchBox">
+            <div class="dark-light">
+                <i class='bx bx-moon moon'></i>
+                <i class='bx bx-sun sun'></i>
+            </div>
+
+            <div class="searchBox">
+                <div class="searchToggle">
+                    <i class='bx bx-x cancel'></i>
+                    <i class='bx bx-search search'></i>
+                </div>
+
+                <div class="search-field">
+                    <input type="text" placeholder="Search...">
+                    <i class='bx bx-search'></i>
+                </div>
+            </div>
+        </div>
+        <a id="contactBtn" href="contact.html">Kontakt</a>
+    </div>
+</nav>
+
+<script>
+
+    const body = document.querySelector("body"),
+        nav = document.querySelector("nav"),
+        modeToggle = document.querySelector(".dark-light"),
+        searchToggle = document.querySelector(".searchToggle"),
+        sidebarOpen = document.querySelector(".sidebarOpen"),
+        siderbarClose = document.querySelector(".siderbarClose");
+
+    let getMode = localStorage.getItem("mode");
+    if(getMode && getMode === "dark-mode"){
+        body.classList.add("dark");
+    }
+
+    modeToggle.addEventListener("click" , () =>{
+        modeToggle.classList.toggle("active");
+        body.classList.toggle("dark");
+
+        if(!body.classList.contains("dark")){
+            localStorage.setItem("mode" , "light-mode");
+        }else{
+            localStorage.setItem("mode" , "dark-mode");
+        }
+    });
+
+    searchToggle.addEventListener("click" , () =>{
+        searchToggle.classList.toggle("active");
+    });
+
+
+    sidebarOpen.addEventListener("click" , () =>{
+        nav.classList.add("active");
+    });
+
+    body.addEventListener("click" , e =>{
+        let clickedElm = e.target;
+
+        if(!clickedElm.classList.contains("sidebarOpen") && !clickedElm.classList.contains("menu")){
+            nav.classList.remove("active");
+        }
+    });
+
+</script>
+<div id="content">
+    <h1>News</h1>
+</div>
+
+<footer class="footer">
+    <div class="waves">
+        <div class="wave" id="wave1"></div>
+        <div class="wave" id="wave2"></div>
+        <div class="wave" id="wave3"></div>
+        <div class="wave" id="wave4"></div>
+    </div>
+    <h3>Dtravelt</h3>
+    <p>since 2020</p>
+    <ul class="social-icon">
+        <li class="social-icon__item"><a class="social-icon__link" href="https://www.twitch.tv/dtravelt">
+            <i class="fa-brands fa-twitch"></i>
+        </a></li>
+        <li class="social-icon__item"><a class="social-icon__link" href="https://twitter.com/Dtravelt1?s=09">
+            <i class="fa-brands fa-twitter"></i>
+        </a></li>
+        <li class="social-icon__item"><a class="social-icon__link" href="https://www.instagram.com/dtravelt/">
+            <i class="fa-brands fa-instagram"></i>
+        </a></li>
+        <li class="social-icon__item"><a class="social-icon__link" href="https://www.facebook.com/dtravelt-105713374175500">
+            <i class="fa-brands fa-facebook"></i>
+        </a></li>
+        <li class="social-icon__item"><a class="social-icon__link" href="https://www.tiktok.com/@dtravelt">
+            <i class="fa-brands fa-tiktok"></i>
+        </a></li>
+        <li class="social-icon__item"><a class="social-icon__link" href="https://www.tipeeestream.com/dtravelt/donation">
+            <i class="fa-solid fa-circle-dollar-to-slot"></i>
+        </a></li>
+        <li class="social-icon__item"><a class="social-icon__link" href="https://discord.com/invite/U3qFT5dZKt">
+            <i class="fa-brands fa-discord"></i>
+        </a></li>
+    </ul>
+    <p id="david">Erstellt von BreakingBadDavid – 2023</p>
+</footer>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script></body>
+</body>
+</html>
