@@ -312,6 +312,10 @@ body.dark .search-field i{
         justify-content: space-between;
     }
 
+    menu .logo-toggle .logo{
+        margin-right: -10%;
+    }
+
     .logo-toggle .siderbarClose{
         color: var(--text-color);
         font-size: 24px;
@@ -322,8 +326,8 @@ body.dark .search-field i{
         flex-direction: column;
         padding-top: 30px;
         background-color: rgba(53, 134, 255, 0.97);
-        padding-left: 4vw;
-        padding-right: 4vw;
+        padding-left: 1vw;
+        padding-right: 1vw;
         border-radius: 10px;
     }
 
